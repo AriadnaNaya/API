@@ -2,7 +2,7 @@ import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { XCircle } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
-import { MenuSection } from './MenuSection'
+import MenuSection from './MenuSection';
 
 export const MobileDrawer = ({ isOpen, onClose, sections }) => (
     <AnimatePresence>
