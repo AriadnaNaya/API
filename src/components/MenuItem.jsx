@@ -1,38 +1,29 @@
-import React from 'react'
-import { Sparkles } from 'lucide-react'
+import React from 'react';
 
-export const MenuItem = ({ item }) => {
+const MenuItem = ({ nombre, descripcion, precio }) => {
     return (
-        <>
-            <div className="flex items-center justify-between">
-                <h3 className="text-md font-medium text-white">{item.name}</h3>
-                <span className="text-gray-300">${item.price.toLocaleString('es-AR')}</span>
+        <div className="flex justify-between items-start py-4 border-b border-gray-700">
+            <div className="max-w-xl pr-4">
+                <h3 className="text-lg font-semibold text-white tracking-wide uppercase">
+                    {nombre}
+                </h3>
+                {descripcion && (
+                    <p className="text-sm text-gray-400 mt-1 leading-relaxed">
+                        {descripcion}
+                    </p>
+                )}
             </div>
-            {item.description && (
-                <p className="text-sm text-gray-400">{item.description}</p>
-            )}
-            {item.sizes && (
-                <div className="flex gap-2 text-xs text-gray-400">
-                    {item.sizes.map((size, index) => (
-                        <span key={index}>{size}</span>
-                    ))}
-                </div>
-            )}
-            {item.variations && (
-                <div className="flex flex-wrap gap-2 text-xs text-gray-400">
-                    {item.variations.map((variation, index) => (
-                        <span key={index}>{variation}</span>
-                    ))}
-                </div>
-            )}
-            {item.base && <p className="text-xs text-gray-400">{item.base}</p>}
-            {item.quantity && <p className="text-xs text-gray-400">Cantidad: {item.quantity}</p>}
-            {item.soyPaper && (
-                <span className="inline-flex items-center rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-xs font-semibold text-emerald-400">
-          <Sparkles className="mr-1.5 h-2 w-2" />
-          Soy Paper
-        </span>
-            )}
-        </>
-    )
-}
+            <div className="text-right min-w-[80px]">
+                {typeof precio === 'number' ? (
+                    <span className="text-sm font-bold text-white whitespace-nowrap">
+                ${precio.toLocaleString('es-AR')}
+                    </span>
+                ) : (
+                    <span className="text-sm text-red-400">Precio no disponible</span>
+                )}
+            </div>
+        </div>
+    );
+};
+
+export default MenuItem;

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import { ChevronDown, ChevronUp } from 'lucide-react'
-import { MenuItem } from './MenuItem'
+import MenuItem from './MenuItem';
 import { cn } from '@/lib/utils'
 
 const menuItemVariants = {
@@ -49,7 +49,11 @@ export const MenuSection = ({ section, isMobile }) => {
                     >
                         {section.items.map((item, index) => (
                             <motion.div key={index} variants={menuItemVariants} className="space-y-1">
-                                <MenuItem item={item} />
+                                <MenuItem
+                                    nombre={item.nombre}
+                                    descripcion={item.descripcion}
+                                    precio={item.precio}
+                                />
                             </motion.div>
                         ))}
                     </motion.div>

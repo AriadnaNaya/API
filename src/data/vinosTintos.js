@@ -1,0 +1,20 @@
+export const vinosTintos = [
+    { nombre: "Álamos Malbec", precio: 16800 },
+    { nombre: "Álamos Cabernet Sauvignon", precio: 16800 },
+    { nombre: "Álamos Red Blend", precio: 18370 },
+    { nombre: "Álamos Pinot Noir Reserve", precio: 17200 },
+    { nombre: "Álamos Malbec Mac Atenuada", precio: 16800 },
+    { nombre: "Nicasia Red Blend Malbec", precio: 18330 },
+    { nombre: "Nicasia Red Blend Cabernet Franc", precio: 18330 },
+    { nombre: "El Enemigo Bonarda", precio: 46079 },
+    { nombre: "El Enemigo Malbec", precio: 46079 },
+    { nombre: "El Enemigo Cabernet Franc", precio: 46079 },
+    { nombre: "Saint Felicien Malbec", precio: 23131 },
+    { nombre: "Saint Felicien Cabernet Sauvignon", precio: 23131 },
+    { nombre: "Saint Felicien Cabernet Merlot", precio: 21028 },
+    { nombre: "Saint Felicien Syrah", precio: 21028 },
+    { nombre: "D.V. Catena Cabernet Malbec", precio: 27200 },
+    { nombre: "D.V. Catena Syrah Syrah", precio: 27200 },
+    { nombre: "D.V. Catena Cabernet – Cabernet", precio: 27200 },
+    { nombre: "D.V. Catena Malbec – Malbec", precio: 45759 }
+];

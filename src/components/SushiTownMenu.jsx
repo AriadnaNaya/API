@@ -4,7 +4,10 @@ import { Header } from './Header'
 import { Sidebar } from './Sidebar'
 import { MobileDrawer } from './MobileDrawer'
 import { Footer } from './Footer'
-import menuData from '../data/menuData'
+import {menuData} from '../data/menuData.js'
+import MenuItem from './MenuItem';
+
+
 
 export const SushiTownMenu = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -31,7 +34,21 @@ export const SushiTownMenu = () => {
                     <div className="mb-8 text-sm text-gray-400 border-b border-gray-800 pb-4">
                         Estamos comprometidos con tu bienestar. Si tienes alguna alergia, avísanos ya que no todos los ingredientes están listados. El valor del cubierto es de $2.800 e incluye nuestro servicio de mesa y el agua con y sin gas.
                     </div>
-                    {/* Aquí se podría agregar contenido adicional o secciones dinámicas */}
+                    {menuData.sections.map(seccion => (
+                        <section key={seccion.nombre} className="mb-12">
+                            <h2 className="text-2xl font-bold text-gray-100 mb-4">{seccion.nombre}</h2>
+                            <div className="space-y-4">
+                                {seccion.items.map(item => (
+                                    <MenuItem
+                                        key={item.nombre}
+                                        nombre={item.nombre}
+                                        descripcion={item.descripcion}
+                                        precio={item.precio}
+                                    />
+                                ))}
+                            </div>
+                        </section>
+                    ))}
                 </main>
             </div>
             <Footer />
